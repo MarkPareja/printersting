@@ -10,7 +10,7 @@ gem 'jbuilder', '~> 1.2'
 gem 'bootstrap-sass', '~> 3.0.0.0.rc'
 gem 'devise'
 gem 'recaptcha', :require => 'recaptcha/rails'
-
+gem 'paperclip', '~> 3.0'
 group :development, :test do
      gem 'sqlite3'
 end
