@@ -1,0 +1,36 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h1>Pins List</h1>
+  </div>  
+  <div class="panel-body">
+<div class="table-responsive">
+<table class="table table-hover table-condensed">
+  <thead>
+    <tr>
+      <th>Description</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pins.each do |pin| %>
+      <tr>
+        <td><%= pin.description %></td>
+        <td><%= link_to '', pin, class: "glyphicon glyphicon-eye-open" %></td>
+        <td><%= link_to '', edit_pin_path(pin), class: "glyphicon glyphicon-edit" %></td>
+        <td><%= link_to '', pin, method: :delete, data: { confirm: 'Are you sure?' }, class: "glyphicon glyphicon-remove" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+    <div class="panel-footer">
+     <%= link_to 'New Pin', new_pin_path %>
+    </div> 
+</div>
+</div>
+<br>
+
+

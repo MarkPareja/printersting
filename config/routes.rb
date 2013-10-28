@@ -1,4 +1,6 @@
 Printersting::Application.routes.draw do
+  resources :pins
+
  devise_for :users, controllers: { registrations: 'registrations' }
   root "pages#home"
   get "about" => "pages#about"
