@@ -9,8 +9,6 @@
     <tr>
       <th>Description</th>
       <th></th>
-      <th></th>
-      <th></th>
     </tr>
   </thead>
 
@@ -18,9 +16,11 @@
     <% @pins.each do |pin| %>
       <tr>
         <td><%= pin.description %></td>
-        <td><%= link_to '', pin, class: "glyphicon glyphicon-eye-open" %></td>
-        <td><%= link_to '', edit_pin_path(pin), class: "glyphicon glyphicon-edit" %></td>
-        <td><%= link_to '', pin, method: :delete, data: { confirm: 'Are you sure?' }, class: "glyphicon glyphicon-remove" %></td>
+        <td>
+            <%= link_to '', pin, class: "glyphicon glyphicon-eye-open" %> &nbsp; 
+            <%= link_to '', edit_pin_path(pin), class: "glyphicon glyphicon-edit" %> &nbsp; 
+            <%= link_to '', pin, method: :delete, data: { confirm: 'Are you sure?' }, class: "glyphicon glyphicon-remove" %>
+        </td>
       </tr>
     <% end %>
   </tbody>
