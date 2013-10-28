@@ -11,6 +11,8 @@ gem 'bootstrap-sass', '~> 3.0.0.0.rc'
 gem 'devise'
 gem 'recaptcha', :require => 'recaptcha/rails'
 gem 'paperclip', '~> 3.0'
+gem 'aws-sdk'
+
 group :development, :test do
      gem 'sqlite3'
 end
