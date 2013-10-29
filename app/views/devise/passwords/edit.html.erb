@@ -10,13 +10,19 @@
       <%= f.hidden_field :reset_password_token %>
 
       <div class="form-group">
-        <%= f.label :password, "New password" %>
-        <%= f.password_field :password, placeholder: "password", class: "form-control", :autofocus => true %>
+        <p> Password </p>
+        <div class="input-group">
+          <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+          <%= f.password_field :password, placeholder: "password", class: "form-control", :autofocus => true %>
+        </div>  
       </div>
 
       <div class="form-group">
-        <%= f.label :password_confirmation, "Confirm new password" %>
-        <%= f.password_field :password_confirmation, placeholder: "password", class: "form-control", :autofocus => true%>
+       <i>re-enter password</i>
+       <div class="input-group">
+          <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+          <%= f.password_field :password_confirmation, placeholder: "password", class: "form-control", :autofocus => true%>
+       </div   
       </div>
 
       <div class="form-group">
