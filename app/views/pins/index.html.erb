@@ -1,43 +1,17 @@
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <h1>Pins List</h1>
-  </div>  
-  <div class="panel-body">
-<div class="table-responsive">
-<table class="table table-hover table-condensed">
-  <thead>
-    <tr>
-      <th>Image</th>
-      <th>Description</th>
-      <th>User</th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @pins.each do |pin| %>
-      <tr>
-        <td><%= image_tag pin.image.url(:thumb) if pin.image? %></td>
-        <td><%= pin.description %></td>
-        <td><%= pin.user.email if pin.user %></td>
-        <td>
+<div id="pins" class="transitions-enabled">
+      <% @pins.each do |pin| %>
+        <div class="box panel panel-default">
+          <%= image_tag pin.image.url(:thumb) if pin.image? %>
+          <div class="panel-body"> 
+            <%= pin.description %>
+            <%= pin.user.email if pin.user %>
+            <br>
             <%= link_to '', pin, class: "glyphicon glyphicon-eye-open" %> &nbsp; 
-            <% if pin.user == current_user %>
-            <%= link_to '', edit_pin_path(pin), class: "glyphicon glyphicon-edit" %> &nbsp; 
-            <%= link_to '', pin, method: :delete, data: { confirm: 'Are you sure?' }, class: "glyphicon glyphicon-remove" %>
-            <% end %>
-        </td>
-      </tr>
+              <% if pin.user == current_user %>
+                <%= link_to '', edit_pin_path(pin), class: "glyphicon glyphicon-edit" %> &nbsp; 
+                <%= link_to '', pin, method: :delete, data: { confirm: 'Are you sure?' }, class: "glyphicon glyphicon-remove" %>
+              <% end %>
+        </div>
+      </div>    
     <% end %>
-  </tbody>
-</table>
 </div>
-    <div class="panel-footer">
-      <% if user_signed_in? %>
-     <%= link_to 'New Pin', new_pin_path %>
-     <% end %>
-    </div> 
-</div>
-</div>
-
-
