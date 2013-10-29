@@ -14,6 +14,8 @@ gem 'recaptcha', :require => 'recaptcha/rails'
 gem 'paperclip', '~> 3.0'
 gem "paperclip-dropbox"
 gem 'masonry-rails'
+gem 'will_paginate', '~> 3.0.5'
+gem 'will_paginate-bootstrap'
 
 group :development, :test do
      gem 'sqlite3'
